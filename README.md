@@ -1,2 +1,2 @@
 # React ToDo-List
-  [DEMO LINK](https://Andriykooo.github.io/react_static-list-of-posts/)
+  [DEMO LINK](https://Andriykooo.github.io/todo-list/)
