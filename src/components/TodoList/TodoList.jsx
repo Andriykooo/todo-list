@@ -6,19 +6,17 @@ export const TodoList = ({ todos, setTodos }) => {
   return (
     <>
       <ul>
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li key={todo.id}>
             <label>
               <input
                 type="checkbox"
                 checked={todo.completed}
                 onChange={() => {
-                  setTodos(prevState => prevState
-                    .map(completedTodo => (completedTodo.id === todo.id
-                      ? {...completedTodo, completed: !todo.completed}
-                      : completedTodo)
-                    )
-                  );
+                  setTodos((prevState) => prevState
+                    .map((completedTodo) => (completedTodo.id === todo.id
+                      ? { ...completedTodo, completed: !todo.completed }
+                      : completedTodo)));
                 }}
               />
             </label>
@@ -27,29 +25,30 @@ export const TodoList = ({ todos, setTodos }) => {
               type="button"
               onClick={() => {
                 setTodos(todos
-                  .filter(currentTodo => todo.id !== currentTodo.id)
-                );
+                  .filter((currentTodo) => todo.id !== currentTodo.id));
               }}
-            >X</button>
+            >
+              X
+            </button>
           </li>
         ))}
       </ul>
       <form
-        onSubmit={event => {
+        onSubmit={(event) => {
           event.preventDefault();
 
           if (!addTodoField) {
             return;
-          };
+          }
 
-          setTodos(prevTodos => (
+          setTodos((prevTodos) => (
             [
               ...prevTodos,
               {
                 text: addTodoField,
                 completed: false,
                 id: prevTodos.length + 1,
-              }
+              },
             ]
           ));
           setAddTodoField('');
@@ -61,14 +60,13 @@ export const TodoList = ({ todos, setTodos }) => {
             name="todo"
             placeholder="Add todo"
             value={addTodoField}
-            onChange={event => {
+            onChange={(event) => {
               setAddTodoField(event.target.value);
             }}
-          >
-          </input>
+          />
         </label>
         <button type="submit">Add</button>
       </form>
     </>
-  )
+  );
 };

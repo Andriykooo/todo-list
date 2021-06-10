@@ -9,7 +9,7 @@ function App() {
   const [searchField, setSearchField] = useState('');
   const [filterTodoBy, setFilterTodoBy] = useState('');
 
-  let preparedTodos = todos.filter(todo => {
+  let preparedTodos = todos.filter((todo) => {
     switch (filterTodoBy) {
       case 'active':
         return todo.completed === false;
@@ -17,10 +17,10 @@ function App() {
         return todo.completed === true;
       default:
         return todo;
-    };
+    }
   });
 
-  preparedTodos = preparedTodos.filter(todo => todo.text.includes(searchField));
+  preparedTodos = preparedTodos.filter((todo) => todo.text.includes(searchField));
 
   return (
     <section className="todo">
@@ -28,17 +28,17 @@ function App() {
         <h1 className="app__title">TODO</h1>
         <div className="todo-search">
           <form>
-          <label>
-            <input
-              type="text"
-              name="search"
-              placeholder="Search"
-              value={searchField}
-              onChange={event => {
-                setSearchField(event.target.value);
-              }}
-            />
-          </label>
+            <label>
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                value={searchField}
+                onChange={(event) => {
+                  setSearchField(event.target.value);
+                }}
+              />
+            </label>
           </form>
         </div>
         <button
