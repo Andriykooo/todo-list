@@ -1,0 +1,23 @@
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(#e66465, #9198e5);
+
+  &__wrapper {
+    margin: 20px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+  }
+}

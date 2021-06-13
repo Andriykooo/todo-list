@@ -1,0 +1,39 @@
+.todo-list {
+  &__list {
+    list-style: none;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    word-break: break-all;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      height: 1px;
+      width: 100%;
+      background-color: gray;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    height: 25px;
+    min-width: 25px;
+    margin: 0 10px;
+    font-size: 16px;
+    line-height: 22px;
+    border: 1px solid gray;
+    cursor: pointer;
+  }
+}
